@@ -1,19 +1,19 @@
 class Solution {
     public int maxProduct(int n) {
-        int f=0;
-        int s=0;
+        int first=0;
+        int second=0;
 
         while(n>0){
             int dig=n%10;
 
-            if(dig>f){
-                s=f;
-                f=dig;
-            }else if(dig>s){
-                s=dig;
+            if(dig>first){
+                second=first;
+                first=dig;
+            }else if(dig>second){
+                second=dig;
             }
             n/=10;
         }
-        return f*s;
+        return first*second;
     }
 }
