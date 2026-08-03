@@ -1,22 +1,22 @@
 class Solution {
     public boolean isCircularSentence(String sentence) {
-        String[] str = sentence.split(" ");
+     String[] arr=sentence.split(" ");
 
-        for (int i = 0; i < str.length - 1; i++) {
-            int len = str[i].length() - 1;
+     int len=arr.length;
+    if(arr[0].charAt(0)!=arr[len-1].charAt(arr[len-1].length()-1)){
+            return false;
+    }
+     for(int i=0;i<len-1;i++){
 
-            if (str[i].charAt(len) != str[i + 1].charAt(0)) {
-                return false;
-            }
-        }
+        char last=arr[i].charAt(arr[i].length()-1);
+        char first=arr[i+1].charAt(0);
 
-        String first = str[0];
-        String last = str[str.length - 1];
-
-        if (last.charAt(last.length() - 1) != first.charAt(0)) {
+        if(last!=first){
             return false;
         }
 
-        return true;
+     }
+
+     return true;
     }
 }
